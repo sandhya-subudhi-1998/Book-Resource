@@ -68,7 +68,8 @@ router.patch('/updateBook/:id', verifyToken, async (req, res) => {
                 const id = req.params.id;
                 const updates = req.body;
                 const result = await Book.findByIdAndUpdate(id, updates)
-                res.json(result)
+                // res.json(result)
+                res.send('Item Updated')
             } catch (error) {
                 res.send('Error ' + error)
             }
